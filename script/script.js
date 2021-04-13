@@ -32,8 +32,18 @@ function enviarDados(numeroFilme){
     const requisicao = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/moviefinder/filmes/${numeroFilme}/ingresso`,pedido)
     console.log(numeroFilme)
     console.log(nomeCliente)
+    requisicao.then(alertaCompra)
+    requisicao.catch(tratarErroCompra)
 }
 
 function tratarErro(){
+    alert("Atualize a página novamente!")
+}
 
+function tratarErroCompra(){
+    alert("Ocorreu um erro, tente efetuar a compra novamente!")
+}
+
+function alertaCompra(){
+    alert("Ingresso comprado com sucesso!")
 }
